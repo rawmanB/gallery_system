@@ -12,6 +12,6 @@
     <?php include("includes/side_nav.php") ?>
 </nav>
 
-<?php include("includes/body-contents/admin_body_content.php") ?>
+<?php include("includes/body-contents/upload_body_content.php") ?>
 
 <?php include("includes/footer.php"); ?>
