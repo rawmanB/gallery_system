@@ -7,7 +7,14 @@
             <div class="col-lg-12">
                 <h1 class="page-header">
                     Admin
-                    <small>Analytics</small>
+                    <small><?php
+                            if ($gallery_database->startConncetion()) {
+                                echo  'true';
+                            } else {
+                                echo 'false';
+                            }
+                            ?>
+                    </small>
                 </h1>
                 <ol class="breadcrumb">
                     <li>
@@ -15,6 +22,7 @@
                     </li>
                     <li class="active">
                         <i class="fa fa-file"></i> Blank Page
+
                     </li>
                 </ol>
             </div>
