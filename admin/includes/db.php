@@ -28,6 +28,7 @@ class Gallery_Databse
     {
         $output = mysqli_query($this->connect, $query);
 
+        $this->queryConfirm($output);
         return $output;
     }
 
