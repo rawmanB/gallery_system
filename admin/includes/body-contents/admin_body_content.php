@@ -16,10 +16,7 @@
                 $query = "SELECT * FROM users WHERE user_id= 1";
 
                 $output = $gallery_database->runQuery($query);
-
-                $result = mysqli_fetch_array($output);
-
-                print_r($result);
+                print_r($output);
                 ?>
                 <ol class="breadcrumb">
                     <li>

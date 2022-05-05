@@ -15,21 +15,24 @@ class Gallery_Databse
      */
     public function startConnection()
     {
-        $this->connect = mysqli_connect(DB_HOST, DB_USER, DB_PASS, DB_NAME);
+        // $this->connect = mysqli_connect(DB_HOST, DB_USER, DB_PASS, DB_NAME);
 
-        if (mysqli_connect_errno()) {
-            die('Database conncetion failed' . mysqli_connect_error());
+        $this->connect = new mysqli(DB_HOST, DB_USER, DB_PASS, DB_NAME);
+
+        if ($this->connect->errno) {
+            die('Database conncetion failed' . $this->connect->connect_errno);
         }
     }
+
+
     /**
      * run query function
      */
     public function runQuery($query)
     {
-        $output = mysqli_query($this->connect, $query);
-
+        $output = $this->connect->query($query);
         $this->queryConfirm($output);
-        return $output;
+        return mysqli_fetch_array($output);
     }
 
 
@@ -40,7 +43,7 @@ class Gallery_Databse
     private function queryConfirm($output)
     {
         if (!$output) {
-            die('Query Failed');
+            die('Query Failed' . $this->connect->error);
         }
     }
 
@@ -50,7 +53,7 @@ class Gallery_Databse
 
     public function escapeString($string)
     {
-        return mysqli_real_escape_string($this->connect, $string);
+        return $this->connect->real_escape_string($string);
     }
 }
 
