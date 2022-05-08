@@ -19,12 +19,12 @@
                 //     print_r($row);
                 // }
 
-                $user = User::findUserById('1');
-                if ($user) {
-                    echo $user->username;
-                } else {
-                    echo 'no user';
-                }
+                // $user = User::findUserById('1');
+                // if ($user) {
+                //     echo $user->username;
+                // } else {
+                //     echo 'no user';
+                // }
                 // $thisUser = User::instantObj($user);
 
                 // echo $thisUser->user_name;

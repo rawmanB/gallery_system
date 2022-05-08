@@ -14,3 +14,8 @@ function autoLoader($class)
 }
 
 spl_autoload_register('autoLoader');
+
+function redirect($path)
+{
+    header('Location:{$path}');
+}
