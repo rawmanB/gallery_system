@@ -53,7 +53,7 @@ class User
 
 
     /**
-     * 
+     * instantiation method to add data to properties
      */
 
     public static function instantObj($user)

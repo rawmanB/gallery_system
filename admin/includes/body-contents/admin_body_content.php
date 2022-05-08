@@ -14,13 +14,17 @@
 
                 <?php
                 // $user = new User();  //instansitating User class or we can use static method as following
-                $userSet = User::findUsers();
+                // $userSet = User::findUsers();
                 // while ($row = mysqli_fetch_array($userSet)) {
                 //     print_r($row);
                 // }
 
                 $user = User::findUserById('1');
-                echo $user->username;
+                if ($user) {
+                    echo $user->username;
+                } else {
+                    echo 'no user';
+                }
                 // $thisUser = User::instantObj($user);
 
                 // echo $thisUser->user_name;

@@ -1,4 +1,5 @@
 <?php
+include('functions.php');
 include("config.php");
-include('db.php');
-include('user.php');
+include('gallery_database.php');
+// include('user.php');
