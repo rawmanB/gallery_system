@@ -32,7 +32,7 @@ class Gallery_Databse
     {
         $output = $this->connect->query($query);
         $this->queryConfirm($output);
-        return mysqli_fetch_array($output);
+        return $output;
     }
 
 

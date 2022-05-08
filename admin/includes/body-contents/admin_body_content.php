@@ -13,10 +13,14 @@
                 </h1>
 
                 <?php
-                $query = "SELECT * FROM users WHERE user_id= 1";
+                $user = new User();  //instansitating User class
+                $userSet = $user->findUsers();
 
-                $output = $gallery_database->runQuery($query);
-                print_r($output);
+                while ($row = mysqli_fetch_array($userSet)) {
+                    print_r($row);
+                }
+
+                // print_r(mysqli_fetch_array($output));
                 ?>
                 <ol class="breadcrumb">
                     <li>
