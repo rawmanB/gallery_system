@@ -4,7 +4,6 @@ function autoLoader($class)
 
     $class = strtolower($class);
     $path = "includes/{$class}.php";
-    echo $path;
 
     if (is_file($path) && !class_exists($class)) {
         require_once($path);
@@ -17,5 +16,5 @@ spl_autoload_register('autoLoader');
 
 function redirect($path)
 {
-    header('Location:{$path}');
+    header("Location:{$path}");
 }

@@ -1,7 +1,7 @@
 <?php
 require_once('includes/header.php');
 
-if (!$session->is_signed_in()) {
+if ($session->is_signed_in()) {
     redirect('index.php');
 }
 if (isset($_POST['submit'])) {
@@ -20,8 +20,9 @@ if (isset($_POST['submit'])) {
         $errormsg = 'Username or Password are in correct';
     }
 } else {
-    // $username = '';
-    // $password = '';
+    $username = '';
+    $password = '';
+    $errormsg = '';
 } ?>
 <div class="col-md-4 col-md-offset-3">
 
