@@ -1,9 +1,5 @@
 <?php ob_start();
-require_once("init.php");
-if (!$session->is_signed_in()) {
-    redirect('login.php');
-}
-?>
+require_once("init.php"); ?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -15,7 +11,7 @@ if (!$session->is_signed_in()) {
     <meta name="description" content="">
     <meta name="author" content="">
 
-    <title>SB Admin - Bootstrap Admin Template</title>
+    <title>Gallery</title>
 
     <!-- Bootstrap Core CSS -->
     <link href="css/bootstrap.min.css" rel="stylesheet">

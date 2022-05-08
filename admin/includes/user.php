@@ -51,6 +51,26 @@ class User
         return $obj_array;
     }
 
+    /**
+     * verify user after login
+     */
+
+    public static function verifyUser($username, $password)
+    {
+
+        global $gallery_database;
+        $uname = $gallery_database->escapeString($username);
+        $pw = $gallery_database->escapeString($password);
+
+        $sql = "SELECT * FROM users WHERE ";
+        $sql .= "username = '{$uname}'";
+        $sql .= "AND password = '{$pw}'";
+        $sql .= "LIMIT 1";
+
+        $result = self::findThisQuery($sql);
+        return !empty($result) ? array_shift($result) : false;
+    }
+
 
     /**
      * instantiation method to add data to properties
