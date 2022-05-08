@@ -15,14 +15,25 @@
                 <?php
                 // $user = new User();  //instansitating User class or we can use static method as following
                 $userSet = User::findUsers();
-
-                while ($row = mysqli_fetch_array($userSet)) {
-                    // print_r($row);
-                }
+                // while ($row = mysqli_fetch_array($userSet)) {
+                //     print_r($row);
+                // }
 
                 $user = User::findUserById('1');
-                echo '<br>';
-                // print_r($user);
+                echo $user->username;
+                // $thisUser = User::instantObj($user);
+
+                // echo $thisUser->user_name;
+
+                // $users  = User::findUsers();
+                // // print_r($users);
+
+                // foreach ($users as $user) {
+
+                //     echo $user->username;
+                // }
+
+
                 ?>
                 <ol class="breadcrumb">
                     <li>
