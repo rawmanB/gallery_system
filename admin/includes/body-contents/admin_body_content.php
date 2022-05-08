@@ -13,14 +13,16 @@
                 </h1>
 
                 <?php
-                $user = new User();  //instansitating User class
-                $userSet = $user->findUsers();
+                // $user = new User();  //instansitating User class or we can use static method as following
+                $userSet = User::findUsers();
 
                 while ($row = mysqli_fetch_array($userSet)) {
-                    print_r($row);
+                    // print_r($row);
                 }
 
-                // print_r(mysqli_fetch_array($output));
+                $user = User::findUserById('1');
+                echo '<br>';
+                // print_r($user);
                 ?>
                 <ol class="breadcrumb">
                     <li>
